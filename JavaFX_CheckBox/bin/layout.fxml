@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <CheckBox fx:id="check1" layoutX="265.0" layoutY="183.0" mnemonicParsing="false" text="Java" />
+      <CheckBox fx:id="check2" layoutX="265.0" layoutY="208.0" mnemonicParsing="false" text="Spring Boot" />
+      <Button fx:id="button1" layoutX="276.0" layoutY="240.0" mnemonicParsing="false" onAction="#pegar" text="Pegar" />
+   </children>
+</AnchorPane>
