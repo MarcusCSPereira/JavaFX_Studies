@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPrinS" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: F9F8F1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Signup">
+   <children>
+      <AnchorPane prefHeight="80.0" prefWidth="700.0" style="-fx-background-color: #7a5980;">
+         <children>
+            <Label alignment="CENTER" layoutX="281.0" layoutY="17.0" prefHeight="35.0" prefWidth="139.0" text="ToDo" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="32.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="69.0" prefHeight="36.0" prefWidth="700.0" style="-fx-background-color: #644967;">
+         <children>
+            <Label alignment="TOP_CENTER" layoutX="315.0" layoutY="2.0" prefHeight="20.0" prefWidth="71.0" text="Cadastro:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="inPrimeiroNome" layoutX="62.0" layoutY="124.0" prefHeight="28.0" prefWidth="227.0" promptText="Primeiro Nome:" style="-fx-font-weight: normal; -fx-background-color: fffff9; -fx-border-color: #7a5980; -fx-border-width: 0 0 1 0; -fx-focus-traversable: true;">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TextField fx:id="inSobrenome" layoutX="62.0" layoutY="165.0" prefHeight="28.0" prefWidth="227.0" promptText="Sobrenome:" style="-fx-font-weight: normal; -fx-background-color: fffff9; -fx-border-color: #7a5980; -fx-border-width: 0 0 1 0;">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TextField fx:id="cadastroNomeUsuario" layoutX="410.0" layoutY="124.0" prefHeight="28.0" prefWidth="227.0" promptText="Nome de Usuário" style="-fx-font-weight: normal; -fx-background-color: fffff9; -fx-border-color: #7a5980; -fx-border-width: 0 0 1 0;" />
+      <TextField fx:id="inLocal" focusTraversable="false" layoutX="62.0" layoutY="263.0" prefHeight="28.0" prefWidth="227.0" promptText="País" style="-fx-font-weight: normal; -fx-background-color: fffff9; -fx-border-color: #7a5980; -fx-border-width: 0 0 1 0;" />
+      <CheckBox fx:id="homemCheckBox" layoutX="62.0" layoutY="219.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="84.0" text="Homem">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </CheckBox>
+      <CheckBox fx:id="MulherCheckBox" layoutX="205.0" layoutY="219.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="84.0" text="Mulher">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </CheckBox>
+      <PasswordField fx:id="cadastroSenha" layoutX="410.0" layoutY="168.0" prefHeight="28.0" prefWidth="227.0" promptText="Senha" style="-fx-background-color: fffff9; -fx-font-style: normal; -fx-border-color: #7a5980; -fx-border-width: 0 0 1 0;" />
+      <PasswordField fx:id="CadastroConfirmSenha" layoutX="410.0" layoutY="215.0" prefHeight="28.0" prefWidth="227.0" promptText="Confirme sua senha" style="-fx-background-color: fffff9; -fx-font-style: normal; -fx-border-color: #7a5980; -fx-border-width: 0 0 1 0;" />
+      <AnchorPane layoutX="556.0" layoutY="362.0" />
+      <Button fx:id="buttonCriarConta" focusTraversable="false" layoutX="438.0" layoutY="286.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="173.0" style="-fx-background-color: a96da3; -fx-font-size: 15px; -fx-font-weight: bolder; -fx-background-radius: 15px;" text="Criar Conta" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="394.0" layoutY="361.0" prefHeight="26.0" prefWidth="121.0" text="Já possui Cadastro?" />
+      <Hyperlink fx:id="hyperlinkVoltarLogin" focusTraversable="false" layoutX="524.0" layoutY="362.0" style="-fx-border-style: dotted; -fx-border-color: a96da3;" text="Voltar para tela de Login" textFill="#a96da3" />
+      <ProgressBar fx:id="progressBar" layoutX="76.0" layoutY="316.0" prefHeight="20.0" prefWidth="200.0" progress="0.04" style="-fx-accent: a96da3;" />
+      <Label fx:id="errorLabel" alignment="CENTER" layoutX="408.0" layoutY="248.0" prefHeight="36.0" prefWidth="227.0" style="-fx-text-fill: red;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

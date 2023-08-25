@@ -10,16 +10,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #7a5980;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.LoginController">
+<AnchorPane fx:id="anchorpane2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #7a5980;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.LoginController">
    <children>
+      <Button fx:id="singUpButton" alignment="CENTER" layoutX="583.0" layoutY="45.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="109.0" style="-fx-background-color: a96da3; -fx-background-radius: 15px; -fx-font-size: 15px; -fx-font-weight: bolder;" text="Cadastrar-se" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <AnchorPane layoutY="88.0" prefHeight="312.0" prefWidth="700.0" style="-fx-background-color: F9F8F1;">
          <children>
-            <TextField fx:id="userNameInput" focusTraversable="false" layoutX="198.0" layoutY="67.0" prefHeight="32.0" prefWidth="305.0" promptText="Username" style="-fx-font-weight: bolder; -fx-background-color: ffffff; -fx-border-color: #7a5980; -fx-border-width: 0 0 1 0;">
+            <TextField fx:id="userNameInput" focusTraversable="false" layoutX="198.0" layoutY="67.0" prefHeight="32.0" prefWidth="305.0" promptText="Nome de Usuário" style="-fx-font-weight: normal; -fx-background-color: ffffff; -fx-border-color: #7a5980; -fx-border-width: 0 0 1 0;">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </TextField>
-            <PasswordField fx:id="passWordInput" focusTraversable="false" layoutX="198.0" layoutY="124.0" prefHeight="32.0" prefWidth="305.0" promptText="Password" style="-fx-background-color: ffffff; -fx-font-weight: bolder; -fx-border-color: #7a5980; -fx-border-width: 0 0 1 0;">
+            <PasswordField fx:id="passWordInput" focusTraversable="false" layoutX="198.0" layoutY="124.0" prefHeight="32.0" prefWidth="305.0" promptText="Senha" style="-fx-background-color: ffffff; -fx-font-weight: normal; -fx-border-color: #7a5980; -fx-border-width: 0 0 1 0;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -32,13 +36,15 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Button fx:id="loginButton" alignment="CENTER" layoutX="306.0" layoutY="174.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="90.0" style="-fx-background-color: a96da3; -fx-font-size: 15px; -fx-font-weight: bolder; -fx-background-radius: 15px;" text="Login" textFill="WHITE" />
+            <Button fx:id="loginButton" alignment="CENTER" layoutX="306.0" layoutY="174.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="90.0" style="-fx-background-color: a96da3; -fx-font-size: 15px; -fx-font-weight: bolder; -fx-background-radius: 15px;" text="Login" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children></AnchorPane>
-      <Label alignment="CENTER" layoutX="276.0" layoutY="6.0" prefHeight="64.0" prefWidth="149.0" text="ToDo" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="276.0" layoutY="14.0" prefHeight="64.0" prefWidth="149.0" text="ToDo" textFill="WHITE">
          <font>
-            <Font name="System Bold Italic" size="36.0" />
+            <Font name="System Bold Italic" size="32.0" />
          </font>
       </Label>
-      <Button fx:id="singUpButton" alignment="CENTER" layoutX="609.0" layoutY="38.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="78.0" style="-fx-background-color: a96da3; -fx-background-radius: 15px; -fx-font-size: 15px; -fx-font-weight: bolder;" text="Sign Up" textFill="WHITE" />
    </children>
 </AnchorPane>
