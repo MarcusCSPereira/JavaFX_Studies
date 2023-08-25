@@ -54,6 +54,9 @@ public class Signup implements Initializable{
     private Hyperlink hyperlinkVoltarLogin;
 
     @FXML
+    private Label confirmLabel;
+
+    @FXML
     private TextField inLocal;
 
     @FXML
@@ -177,6 +180,7 @@ public class Signup implements Initializable{
 
             if(this.permissaoCadastro){
                 databaseHandler.signUpUser(inPrimeiroNome.getText(),inSobrenome.getText(), cadastroNomeUsuario.getText(), cadastroSenha.getText(), inLocal.getText(), generoSelecionado);
+                confirmLabel.setText("Cadastro realizado com Sucesso!");
             }
 
         });
