@@ -30,9 +30,6 @@ public class AddTaskController {
     private ImageView apagarImageTarefa;
 
     @FXML
-    private ImageView backImageBtt;
-
-    @FXML
     private DatePicker datePickerDataTarefa;
 
     @FXML
@@ -45,33 +42,18 @@ public class AddTaskController {
     private AnchorPane anchorpanePrincipal;
 
 
+    static private String[] nomeTarefa = new String[10];
+    static private String[] dataTarefa = new String[10];
+    static private String[] descricaoTarefa= new String[10];
+    static private int contador=0;
+
     @FXML
     void initialize() {
-        
         
         anchorpanePrincipal.setOnMouseClicked(event -> {
             anchorpanePrincipal.requestFocus();
         });
         
-        
-        //voltar para a tela de tasks
-        backImageBtt.setOnMouseClicked(event ->{
-            backImageBtt.getScene().getWindow().hide();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/view/TaskList.fxml"));
-
-            try {
-                loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.show();
-
-        });
 
         apagarImageTarefa.setOnMouseClicked(event ->{
             fieldNomeTarefa.setText("");
@@ -79,6 +61,54 @@ public class AddTaskController {
             datePickerDataTarefa.setValue(null);;
         });
 
+
+
+        addTarefaImage.setOnMouseClicked(event -> {
+            
+            if(!fieldNomeTarefa.getText().equals("") && contador <10){
+                nomeTarefa[contador] = fieldNomeTarefa.getText();
+                descricaoTarefa[contador] = fieldDescricaoTarefa.getText();
+                dataTarefa[contador] = datePickerDataTarefa.getValue().toString();
+                contador++;
+
+                addTarefaImage.getScene().getWindow().hide();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/view/TaskList.fxml"));
+
+                try {
+                        loader.load();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                Parent root = loader.getRoot();
+
+                // necessário para passar os dados ao outro controlador essa linha é referente a linha 83 do TaskList;
+                TaskListController addTasksController = loader.getController();
+                addTasksController.setAddTaskContrroler(this);
+
+                            Stage stage = new Stage();
+                            stage.setScene(new Scene(root));
+                            stage.initStyle(StageStyle.UNDECORATED);
+                            stage.showAndWait();
+
+            }  
+        });
     }
+
+        
+    public String getNomeTarefa(int num) {
+        return nomeTarefa[num];
+    }
+    
+    public String getDataTarefa(int num) {
+        return dataTarefa[num];
+    }
+
+    public String getDescricaoTarefa(int num){
+        return descricaoTarefa[num];
+    }
+
+    
+
 
 }

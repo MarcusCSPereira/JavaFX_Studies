@@ -1,9 +1,11 @@
 package sample.model;
 
+import java.time.LocalDate;
+
 public class Task {
     //atributos das Tasks
     private String task;
-    private long datecreate;
+    private LocalDate datecreate;
     private String descricao;
     
     //Construtor padrão das Tasks
@@ -12,7 +14,7 @@ public class Task {
     }
 
     //Construtor Principal das Tasks
-    public Task(String task, long datecreate, String descricao) {
+    public Task(String task, LocalDate datecreate, String descricao) {
         this.task = task;
         this.datecreate = datecreate;
         this.descricao = descricao;
@@ -27,11 +29,11 @@ public class Task {
         this.task = task;
     }
 
-    public long getDatecreate() {
+    public LocalDate getDatecreate() {
         return datecreate;
     }
 
-    public void setDatecreate(long datecreate) {
+    public void setDatecreate(LocalDate datecreate) {
         this.datecreate = datecreate;
     }
 

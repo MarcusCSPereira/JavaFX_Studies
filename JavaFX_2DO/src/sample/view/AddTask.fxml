@@ -21,14 +21,6 @@
             </Label>
          </children>
       </AnchorPane>
-      <ImageView fx:id="backImageBtt" fitHeight="60.0" fitWidth="60.0" layoutX="14.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/icons8-esquerda-64.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
       <Label layoutX="14.0" layoutY="127.0" prefHeight="31.0" prefWidth="155.0" style="-fx-font-weight: bolder; -fx-font-size: 16px;" text="Nome da sua Tarefa:" />
       <TextField fx:id="fieldNomeTarefa" layoutX="179.0" layoutY="127.0" prefHeight="31.0" prefWidth="436.0" promptText="Exemplo: Estudar Programação" style="-fx-font-weight: normal; -fx-background-color: ffffff; -fx-border-color: #7a5980; -fx-border-width: 0 0 1 0;" />
       <TextArea fx:id="fieldDescricaoTarefa" layoutX="179.0" layoutY="185.0" prefHeight="87.0" prefWidth="436.0" promptText="Exemplo: Revisar os conceitos da linguagem Java, aplica-lós em um projeto, lembrar de anotar todo o assunto para fixar o aprendizado." style="-fx-font-weight: normal; -fx-background-color: ffffff; -fx-border-color: #7a5980; -fx-border-width: 0 0 1 0;" />

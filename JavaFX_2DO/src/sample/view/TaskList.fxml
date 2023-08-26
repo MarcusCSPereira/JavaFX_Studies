@@ -3,25 +3,28 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="anchorpanePrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: F9F8F1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.TaskListController">
    <children>
-      <AnchorPane prefHeight="80.0" prefWidth="700.0" style="-fx-background-color: #7a5980;">
+      <AnchorPane prefHeight="95.0" prefWidth="700.0" style="-fx-background-color: #7a5980;">
          <children>
-            <Label alignment="CENTER" layoutX="324.0" layoutY="4.0" prefHeight="72.0" prefWidth="134.0" style="-fx-text-fill: white;" text="ToDo">
+            <Label alignment="CENTER" layoutX="319.0" layoutY="12.0" prefHeight="72.0" prefWidth="134.0" style="-fx-text-fill: white;" text="ToDo">
                <font>
                   <Font name="System Bold Italic" size="32.0" />
                </font>
             </Label>
+            <Label fx:id="labelSemTask" alignment="CENTER" layoutX="95.0" layoutY="67.0" prefHeight="29.0" prefWidth="591.0" style="-fx-text-fill: white; -fx-font-weight: bolder; -fx-font-size: 14px;" text="Você ainda não possui nenhuma tarefa, clique no ícone abaixo para adicionar tarefas!" visible="false" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="400.0" prefWidth="78.0" style="-fx-background-color: #644967;">
          <children>
-            <Button fx:id="bttTarefas" alignment="CENTER" layoutY="93.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="90.0" style="-fx-background-color: F9F8F1; -fx-background-radius: 30px 0 0 30px; -fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 12px;" text="Tarefas">
+            <Button fx:id="bttTarefas" alignment="CENTER" layoutY="95.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="90.0" style="-fx-background-color: a96da3; -fx-background-radius: 30px 0 0 30px; -fx-text-fill: white; -fx-font-weight: bolder; -fx-font-size: 12px;" text="Tarefas">
                <font>
                   <Font size="11.0" />
                </font>
@@ -29,7 +32,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="bttInfo" alignment="CENTER" layoutY="131.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="90.0" style="-fx-background-color: a96da3; -fx-background-radius: 30px 0 0 30px; -fx-text-fill: white; -fx-font-weight: bolder; -fx-font-size: 12px;" text="Informações">
+            <Button fx:id="bttInfo" alignment="CENTER" layoutY="134.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="90.0" style="-fx-background-color: a96da3; -fx-background-radius: 30px 0 0 30px; -fx-text-fill: white; -fx-font-weight: bolder; -fx-font-size: 12px;" text="Informações">
                <font>
                   <Font size="11.0" />
                </font>
@@ -42,7 +45,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <ImageView fx:id="avatarImage1" fitHeight="80.0" fitWidth="62.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="avatarImage1" fitHeight="80.0" fitWidth="62.0" layoutX="14.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/icons8-avatar-64.png" />
                </image>
@@ -50,16 +53,17 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
+            <ImageView fx:id="addTaskItem" fitHeight="56.0" fitWidth="62.0" layoutX="17.0" layoutY="292.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../assets/icons8-add-bookmark-64.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label fx:id="labelNewTask" alignment="CENTER_RIGHT" layoutX="6.0" layoutY="172.0" style="-fx-text-fill: green; -fx-font-weight: bolder;" text="Nova Tarefa!" visible="false" />
          </children>
       </AnchorPane>
-      <ImageView fx:id="addTaskItem" fitHeight="52.0" fitWidth="52.0" layoutX="578.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/icons8-add-bookmark-64.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
       <Label fx:id="labelNomeCompleto" layoutX="112.0" layoutY="100.0" prefHeight="30.0" prefWidth="134.0" text="Nome Completo:" visible="false">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -120,14 +124,346 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <ImageView fx:id="deleteTaskItem" fitHeight="52.0" fitWidth="52.0" layoutX="637.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/icons8-lixeira-64.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
+      <AnchorPane fx:id="apPrincipal" layoutX="90.0" layoutY="95.0" prefHeight="295.0" prefWidth="610.0">
+         <children>
+            <ImageView fx:id="background" fitHeight="312.0" fitWidth="610.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/arcade-machine-game-cartoon-vector-icon-illustration-holiday-technology-icon-isolated-premium-flat_138676-7546.png" />
+               </image>
+            </ImageView>
+            <ScrollPane fx:id="telaTasks" disable="true" hbarPolicy="NEVER" layoutY="-1.0" prefHeight="305.0" prefWidth="610.0" style="-fx-background-color: F9F8F1; " visible="false">
+               <content>
+                  <VBox prefHeight="319.0" prefWidth="608.0" style="-fx-background-color: F9F8F1;">
+                     <children>
+                        <AnchorPane fx:id="apTask0" prefHeight="63.0" prefWidth="623.0" style="-fx-background-color: F9F8F1; -fx-border-color: a96da3; -fx-border-width: 0 0 2 0;" visible="false">
+                           <children>
+                              <Label layoutX="7.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="Deseja concluir até:" underline="true" />
+                              <Label fx:id="dataTarefa0" layoutX="133.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="08/26/2023" visible="false" />
+                              <Label fx:id="nomeTarefa0" layoutX="133.0" layoutY="4.0" prefHeight="21.0" prefWidth="255.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Programar Essa Poha" visible="false" />
+                              <ImageView fx:id="bttDeleteTarefa0" disable="true" fitHeight="43.0" fitWidth="52.0" layoutX="551.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@../assets/icons8-lixeira-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <ImageView fx:id="bttEditTarefa0" disable="true" fitHeight="52.0" fitWidth="43.0" layoutX="508.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@../assets/icons8-editar-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <Label layoutX="7.0" layoutY="-1.0" prefHeight="30.0" prefWidth="119.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Nome da Tarefa:" underline="true" />
+                              <ImageView fx:id="bttInTarefa0" disable="true" fitHeight="52.0" fitWidth="42.0" layoutX="452.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@../assets/icons8-selecionado-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="apTask01" disable="true" prefHeight="63.0" prefWidth="623.0" style="-fx-background-color: F9F8F1; -fx-border-color: a96da3; -fx-border-width: 0 0 2 0;" visible="false">
+                           <children>
+                              <Label layoutX="7.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="Deseja concluir até:" underline="true" />
+                              <Label fx:id="dataTarefa01" layoutX="133.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="08/26/2023" />
+                              <Label fx:id="nomeTarefa01" layoutX="133.0" layoutY="4.0" prefHeight="21.0" prefWidth="255.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Programar Essa Poha" />
+                              <ImageView fx:id="bttDeleteTarefa01" fitHeight="43.0" fitWidth="52.0" layoutX="551.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-lixeira-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <ImageView fx:id="bttEditTarefa01" fitHeight="52.0" fitWidth="43.0" layoutX="508.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-editar-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <Label layoutX="7.0" layoutY="-1.0" prefHeight="30.0" prefWidth="119.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Nome da Tarefa:" underline="true" />
+                              <ImageView fx:id="bttInTarefa01" fitHeight="52.0" fitWidth="42.0" layoutX="452.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-selecionado-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="apTask02" disable="true" prefHeight="63.0" prefWidth="623.0" style="-fx-background-color: F9F8F1; -fx-border-color: a96da3; -fx-border-width: 0 0 2 0;" visible="false">
+                           <children>
+                              <Label layoutX="7.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="Deseja concluir até:" underline="true" />
+                              <Label fx:id="dataTarefa02" layoutX="133.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="08/26/2023" />
+                              <Label fx:id="nomeTarefa02" layoutX="133.0" layoutY="4.0" prefHeight="21.0" prefWidth="255.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Programar Essa Poha" />
+                              <ImageView fx:id="bttDeleteTarefa02" fitHeight="43.0" fitWidth="52.0" layoutX="551.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-lixeira-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <ImageView fx:id="bttEditTarefa02" fitHeight="52.0" fitWidth="43.0" layoutX="508.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-editar-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <Label layoutX="7.0" layoutY="-1.0" prefHeight="30.0" prefWidth="119.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Nome da Tarefa:" underline="true" />
+                              <ImageView fx:id="bttInTarefa02" fitHeight="52.0" fitWidth="42.0" layoutX="452.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-selecionado-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="apTask03" disable="true" prefHeight="63.0" prefWidth="623.0" style="-fx-background-color: F9F8F1; -fx-border-color: a96da3; -fx-border-width: 0 0 2 0;" visible="false">
+                           <children>
+                              <Label layoutX="7.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="Deseja concluir até:" underline="true" />
+                              <Label fx:id="dataTarefa03" layoutX="133.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="08/26/2023" />
+                              <Label fx:id="nomeTarefa03" layoutX="133.0" layoutY="4.0" prefHeight="21.0" prefWidth="255.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Programar Essa Poha" />
+                              <ImageView fx:id="bttDeleteTarefa03" fitHeight="43.0" fitWidth="52.0" layoutX="551.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-lixeira-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <ImageView fx:id="bttEditTarefa03" fitHeight="52.0" fitWidth="43.0" layoutX="508.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-editar-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <Label layoutX="7.0" layoutY="-1.0" prefHeight="30.0" prefWidth="119.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Nome da Tarefa:" underline="true" />
+                              <ImageView fx:id="bttInTarefa03" fitHeight="52.0" fitWidth="42.0" layoutX="452.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-selecionado-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="apTask04" disable="true" prefHeight="63.0" prefWidth="623.0" style="-fx-background-color: F9F8F1; -fx-border-color: a96da3; -fx-border-width: 0 0 2 0;" visible="false">
+                           <children>
+                              <Label layoutX="7.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="Deseja concluir até:" underline="true" />
+                              <Label fx:id="dataTarefa04" layoutX="133.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="08/26/2023" />
+                              <Label fx:id="nomeTarefa04" layoutX="133.0" layoutY="4.0" prefHeight="21.0" prefWidth="255.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Programar Essa Poha" />
+                              <ImageView fx:id="bttDeleteTarefa04" fitHeight="43.0" fitWidth="52.0" layoutX="551.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-lixeira-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <ImageView fx:id="bttEditTarefa04" fitHeight="52.0" fitWidth="43.0" layoutX="508.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-editar-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <Label layoutX="7.0" layoutY="-1.0" prefHeight="30.0" prefWidth="119.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Nome da Tarefa:" underline="true" />
+                              <ImageView fx:id="bttInTarefa04" fitHeight="52.0" fitWidth="42.0" layoutX="452.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-selecionado-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="apTask05" disable="true" prefHeight="63.0" prefWidth="623.0" style="-fx-background-color: F9F8F1; -fx-border-color: a96da3; -fx-border-width: 0 0 2 0;" visible="false">
+                           <children>
+                              <Label layoutX="7.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="Deseja concluir até:" underline="true" />
+                              <Label fx:id="dataTarefa05" layoutX="133.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="08/26/2023" />
+                              <Label fx:id="nomeTarefa05" layoutX="133.0" layoutY="4.0" prefHeight="21.0" prefWidth="255.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Programar Essa Poha" />
+                              <ImageView fx:id="bttDeleteTarefa05" fitHeight="43.0" fitWidth="52.0" layoutX="551.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-lixeira-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <ImageView fx:id="bttEditTarefa05" fitHeight="52.0" fitWidth="43.0" layoutX="508.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-editar-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <Label layoutX="7.0" layoutY="-1.0" prefHeight="30.0" prefWidth="119.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Nome da Tarefa:" underline="true" />
+                              <ImageView fx:id="bttInTarefa05" fitHeight="52.0" fitWidth="42.0" layoutX="452.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-selecionado-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="apTask06" disable="true" prefHeight="63.0" prefWidth="623.0" style="-fx-background-color: F9F8F1; -fx-border-color: a96da3; -fx-border-width: 0 0 2 0;" visible="false">
+                           <children>
+                              <Label layoutX="7.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="Deseja concluir até:" underline="true" />
+                              <Label fx:id="dataTarefa06" layoutX="133.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="08/26/2023" />
+                              <Label fx:id="nomeTarefa06" layoutX="133.0" layoutY="4.0" prefHeight="21.0" prefWidth="255.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Programar Essa Poha" />
+                              <ImageView fx:id="bttDeleteTarefa06" fitHeight="43.0" fitWidth="52.0" layoutX="551.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-lixeira-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <ImageView fx:id="bttEditTarefa06" fitHeight="52.0" fitWidth="43.0" layoutX="508.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-editar-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <Label layoutX="7.0" layoutY="-1.0" prefHeight="30.0" prefWidth="119.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Nome da Tarefa:" underline="true" />
+                              <ImageView fx:id="bttInTarefa06" fitHeight="52.0" fitWidth="42.0" layoutX="452.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-selecionado-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="apTask07" disable="true" prefHeight="63.0" prefWidth="623.0" style="-fx-background-color: F9F8F1; -fx-border-color: a96da3; -fx-border-width: 0 0 2 0;" visible="false">
+                           <children>
+                              <Label layoutX="7.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="Deseja concluir até:" underline="true" />
+                              <Label fx:id="dataTarefa07" layoutX="133.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="08/26/2023" />
+                              <Label fx:id="nomeTarefa07" layoutX="133.0" layoutY="4.0" prefHeight="21.0" prefWidth="255.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Programar Essa Poha" />
+                              <ImageView fx:id="bttDeleteTarefa07" fitHeight="43.0" fitWidth="52.0" layoutX="551.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-lixeira-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <ImageView fx:id="bttEditTarefa07" fitHeight="52.0" fitWidth="43.0" layoutX="508.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-editar-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <Label layoutX="7.0" layoutY="-1.0" prefHeight="30.0" prefWidth="119.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Nome da Tarefa:" underline="true" />
+                              <ImageView fx:id="bttInTarefa07" fitHeight="52.0" fitWidth="42.0" layoutX="452.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-selecionado-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="apTask08" disable="true" prefHeight="63.0" prefWidth="623.0" style="-fx-background-color: F9F8F1; -fx-border-color: a96da3; -fx-border-width: 0 0 2 0;" visible="false">
+                           <children>
+                              <Label layoutX="7.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="Deseja concluir até:" underline="true" />
+                              <Label fx:id="dataTarefa08" layoutX="133.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="08/26/2023" />
+                              <Label fx:id="nomeTarefa08" layoutX="133.0" layoutY="4.0" prefHeight="21.0" prefWidth="255.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Programar Essa Poha" />
+                              <ImageView fx:id="bttDeleteTarefa08" fitHeight="43.0" fitWidth="52.0" layoutX="551.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-lixeira-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <ImageView fx:id="bttEditTarefa08" fitHeight="52.0" fitWidth="43.0" layoutX="508.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-editar-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <Label layoutX="7.0" layoutY="-1.0" prefHeight="30.0" prefWidth="119.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Nome da Tarefa:" underline="true" />
+                              <ImageView fx:id="bttInTarefa08" fitHeight="52.0" fitWidth="42.0" layoutX="452.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-selecionado-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="apTask09" disable="true" prefHeight="63.0" prefWidth="623.0" style="-fx-background-color: F9F8F1; -fx-border-color: a96da3; -fx-border-width: 0 0 2 0;" visible="false">
+                           <children>
+                              <Label layoutX="7.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="Deseja concluir até:" underline="true" />
+                              <Label fx:id="dataTarefa09" layoutX="133.0" layoutY="32.0" style="-fx-text-fill: black; -fx-font-weight: bolder;" text="08/26/2023" />
+                              <Label fx:id="nomeTarefa09" layoutX="133.0" layoutY="4.0" prefHeight="21.0" prefWidth="255.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Programar Essa Poha" />
+                              <ImageView fx:id="bttDeleteTarefa09" fitHeight="43.0" fitWidth="52.0" layoutX="551.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-lixeira-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <ImageView fx:id="bttEditTarefa09" fitHeight="52.0" fitWidth="43.0" layoutX="508.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-editar-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                              <Label layoutX="7.0" layoutY="-1.0" prefHeight="30.0" prefWidth="119.0" style="-fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 15px;" text="Nome da Tarefa:" underline="true" />
+                              <ImageView fx:id="bttInTarefa09" fitHeight="52.0" fitWidth="42.0" layoutX="452.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/icons8-selecionado-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </content>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
       <ImageView fx:id="imageViewSenha" disable="true" fitHeight="29.0" fitWidth="21.0" layoutX="296.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../assets/olho.png" />
