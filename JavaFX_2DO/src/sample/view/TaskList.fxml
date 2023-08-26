@@ -21,7 +21,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="400.0" prefWidth="78.0" style="-fx-background-color: #644967;">
          <children>
-            <Button fx:id="bttTarefas" alignment="CENTER" layoutY="93.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="90.0" style="-fx-background-color: F9F8F1; -fx-background-radius: 30px 0 0 30px; -fx-text-fill: black; -fx-font-weight: bolder;" text="Tarefas">
+            <Button fx:id="bttTarefas" alignment="CENTER" layoutY="93.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="90.0" style="-fx-background-color: F9F8F1; -fx-background-radius: 30px 0 0 30px; -fx-text-fill: black; -fx-font-weight: bolder; -fx-font-size: 12px;" text="Tarefas">
                <font>
                   <Font size="11.0" />
                </font>
@@ -29,7 +29,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="bttInfo" alignment="CENTER" layoutY="131.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="90.0" style="-fx-background-color: a96da3; -fx-background-radius: 30px 0 0 30px; -fx-text-fill: black; -fx-font-weight: bolder;" text="Informações">
+            <Button fx:id="bttInfo" alignment="CENTER" layoutY="131.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="90.0" style="-fx-background-color: a96da3; -fx-background-radius: 30px 0 0 30px; -fx-text-fill: white; -fx-font-weight: bolder; -fx-font-size: 12px;" text="Informações">
                <font>
                   <Font size="11.0" />
                </font>
@@ -37,7 +37,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="buttonSair" layoutX="8.0" layoutY="361.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="73.0" style="-fx-background-color: a96da3; -fx-text-fill: black; -fx-font-weight: bolder; -fx-background-radius: 25px;" text="Sair">
+            <Button fx:id="buttonSair" layoutX="8.0" layoutY="361.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="73.0" style="-fx-background-color: a96da3; -fx-text-fill: white; -fx-font-weight: bolder; -fx-background-radius: 25px; -fx-font-size: 15px;" text="Sair">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

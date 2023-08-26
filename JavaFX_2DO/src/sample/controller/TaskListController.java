@@ -181,7 +181,7 @@ public class TaskListController {
 
     public void trocaTelaTask(){
         bttTarefas.setStyle("-fx-background-color: #F9F8F1; -fx-background-radius: 30px 0 0 30px; -fx-text-fill: #000; -fx-font-weight: bolder;");
-        bttInfo.setStyle("-fx-background-color: #a96da3; -fx-background-radius: 30px 0 0 30px; -fx-text-fill: #000; -fx-font-weight: bolder;");
+        bttInfo.setStyle("-fx-background-color: #a96da3; -fx-background-radius: 30px 0 0 30px; -fx-text-fill: #fff; -fx-font-weight: bolder;");
         addTaskItem.setVisible(true);
         addTaskItem.setDisable(false);
         deleteTaskItem.setVisible(true);
@@ -209,7 +209,7 @@ public class TaskListController {
 
             preencherCamposComDados();
             bttInfo.setStyle("-fx-background-color: #F9F8F1; -fx-background-radius: 30px 0 0 30px; -fx-text-fill: #000; -fx-font-weight: bolder;");
-            bttTarefas.setStyle("-fx-background-color: #a96da3; -fx-background-radius: 30px 0 0 30px; -fx-text-fill: #000; -fx-font-weight: bolder;");
+            bttTarefas.setStyle("-fx-background-color: #a96da3; -fx-background-radius: 30px 0 0 30px; -fx-text-fill: #fff; -fx-font-weight: bolder;");
             addTaskItem.setVisible(false);
             addTaskItem.setDisable(true);
             deleteTaskItem.setVisible(false);
