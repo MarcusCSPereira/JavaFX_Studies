@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorpane2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #7a5980;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.LoginController">
+<AnchorPane fx:id="anchorpanePrin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #7a5980;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.LoginController">
    <children>
       <Button fx:id="singUpButton" alignment="CENTER" layoutX="583.0" layoutY="45.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="109.0" style="-fx-background-color: a96da3; -fx-background-radius: 15px; -fx-font-size: 15px; -fx-font-weight: bolder;" text="Cadastrar-se" textFill="WHITE">
          <cursor>
@@ -40,11 +40,23 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
+            <Label fx:id="erroLogin" alignment="CENTER" layoutX="108.0" layoutY="214.0" prefHeight="43.0" prefWidth="484.0" style="-fx-text-fill: red;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="4.0" layoutY="289.0" opacity="0.3" text="\@Direitos reservados a: Marcus César Santos Pereira" />
+            <Label layoutX="488.0" layoutY="289.0" opacity="0.3" text="Vitória da Conquista -&gt; 26/08/2023" />
          </children></AnchorPane>
       <Label alignment="CENTER" layoutX="276.0" layoutY="14.0" prefHeight="64.0" prefWidth="149.0" text="ToDo" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="32.0" />
          </font>
       </Label>
+      <Button fx:id="buttonFechar" layoutX="662.0" layoutY="-1.0" maxHeight="30.0" maxWidth="30.0" minHeight="3.0" minWidth="36.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: red; -fx-font-size: 13px; -fx-font-weight: bolder; -fx-min-width: 15; -fx-min-height: 10; -fx-max-height: 28; -fx-text-fill: white; -fx-max-width: 30;" text="X">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

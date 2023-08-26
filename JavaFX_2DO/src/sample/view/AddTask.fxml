@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorpanePrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: F9F8F1;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AddTaskController">
+   <children>
+      <AnchorPane prefHeight="80.0" prefWidth="700.0" style="-fx-background-color: #7a5980;">
+         <children>
+            <Label layoutX="310.0" layoutY="17.0" text="ToDo" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="32.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="backImageBtt" fitHeight="60.0" fitWidth="60.0" layoutX="14.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-esquerda-64.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="14.0" layoutY="127.0" prefHeight="31.0" prefWidth="155.0" style="-fx-font-weight: bolder; -fx-font-size: 16px;" text="Nome da sua Tarefa:" />
+      <TextField fx:id="fieldNomeTarefa" layoutX="179.0" layoutY="127.0" prefHeight="31.0" prefWidth="436.0" promptText="Exemplo: Estudar Programação" style="-fx-font-weight: normal; -fx-background-color: ffffff; -fx-border-color: #7a5980; -fx-border-width: 0 0 1 0;" />
+      <TextArea fx:id="fieldDescricaoTarefa" layoutX="179.0" layoutY="185.0" prefHeight="87.0" prefWidth="436.0" promptText="Exemplo: Revisar os conceitos da linguagem Java, aplica-lós em um projeto, lembrar de anotar todo o assunto para fixar o aprendizado." style="-fx-font-weight: normal; -fx-background-color: ffffff; -fx-border-color: #7a5980; -fx-border-width: 0 0 1 0;" />
+      <Label layoutX="14.0" layoutY="185.0" prefHeight="31.0" prefWidth="155.0" style="-fx-font-weight: bolder; -fx-font-size: 16px;" text="Descreva sua Tarefa:" />
+      <Label layoutX="14.0" layoutY="288.0" prefHeight="31.0" prefWidth="169.0" style="-fx-font-weight: bolder; -fx-font-size: 16px;" text="Data para conclusão:" />
+      <DatePicker fx:id="datePickerDataTarefa" layoutX="179.0" layoutY="291.0" promptText="Exemplo: 21/09/2004">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </DatePicker>
+      <ImageView fx:id="addTarefaImage" fitHeight="60.0" fitWidth="60.0" layoutX="545.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-mais-64.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="apagarImageTarefa" fitHeight="54.0" fitWidth="60.0" layoutX="615.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-excluir-64.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <AnchorPane layoutY="80.0" prefHeight="31.0" prefWidth="700.0" style="-fx-background-color: #644967;">
+         <children>
+            <Label layoutX="290.0" layoutY="4.0" style="-fx-font-weight: bolder; -fx-text-fill: white; -fx-font-size: 16px;" text="Criar nova tarefa">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
